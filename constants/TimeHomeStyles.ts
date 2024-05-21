@@ -16,6 +16,11 @@ export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: "center",
+		justifyContent: "center",
+	},
+	bg: {
+		flex: 1,
+		alignItems: "center",
 		backgroundColor: "#000000a1",
 		justifyContent: "center",
 	},
@@ -37,4 +42,11 @@ export const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 	},
+
+	footer: {
+		paddingBottom: 60,
+		color: '#fff',
+		textAlign: 'center',
+		fontSize: 12
+	}
 })

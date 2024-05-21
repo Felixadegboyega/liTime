@@ -8,7 +8,7 @@ import TimeHandV2 from "@/components/clock/TimeHandV2"
 import { styles } from "@/constants/TimeHomeStyles"
 import { getTime } from "@/helpers/get-time"
 import { useEffect, useState } from "react"
-import { View, ImageBackground } from "react-native"
+import { View, ImageBackground, Text } from "react-native"
 
 const index = () => {
   // const toMilliSec = (x: number) => x * 60000
@@ -24,18 +24,23 @@ const index = () => {
       resizeMode="cover"
       style={styles.image}
     >
-      <View style={styles.container}>
-        <View style={styles.clockouter}>
-          <ClockLines />
-          <TimeHand
-            time={startTime.secs}
-            duration={60000}
-            hand={<LongHand />}
-          />
-          <IntervalHands startTime={startTime} showSec={false} />
-          <View style={styles.clockOrigin} />
+      <View style={styles.bg}>
+        <View style={styles.container}>
+          <View style={styles.clockouter}>
+            <ClockLines />
+            <TimeHand
+              time={startTime.secs}
+              duration={60000}
+              hand={<LongHand />}
+            />
+            <IntervalHands startTime={startTime} showSec={false} />
+            <View style={styles.clockOrigin} />
+          </View>
+          <BottomTime />
         </View>
-        <BottomTime />
+        <Text style={styles.footer}>
+          LiTime by <Text style={{ fontWeight: "600" }}>Licode</Text>
+        </Text>
       </View>
     </ImageBackground>
   )
